@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //this defines 1 rem
+  // font-size: 10px;
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //8px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //8px
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //8px
+  }
+}
+
+/* inherited */
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
